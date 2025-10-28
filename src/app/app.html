@@ -36,13 +36,13 @@
             </div>
 
             <div class="property-card" *ngFor="let property of filteredProperties"
-                [class.selected]="property.id === selectedProperty?.id" (click)="selectProperty(property)">
+                [class.selected]="property.id === selectedProperty.id" (click)="selectProperty(property)">
                 <div class="property-header">
                     <div>
                         <div class="property-title">{{ property.title }}</div>
                         <div class="property-address">📍 {{ property.address }}</div>
                     </div>
-                    <div class="property-price">${{ property.price | number }}</div>
+                    <div class="property-price">₹{{ property.price | number }}</div>
                 </div>
                 <div class="property-details">
                     <div class="detail-item">🛏️ {{ property.bedrooms }} Beds</div>

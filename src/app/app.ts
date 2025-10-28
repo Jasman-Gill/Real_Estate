@@ -1,14 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, LOCALE_ID } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import * as L from 'leaflet';
+
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
+});
 import { Property } from './models/property.model';
 import { PropertyService } from './services/property.service';
+import localeEnIN from '@angular/common/locales/en-IN';
+
+registerLocaleData(localeEnIN, 'en-IN');
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, FormsModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'en-IN' }],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -62,7 +73,7 @@ export class AppComponent implements OnInit {
   }
 
   initMap() {
-    this.map = L.map('map').setView([40.7589, -73.9851], 11);
+    this.map = L.map('map').setView([31.3260, 75.5762], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(this.map);
@@ -75,7 +86,7 @@ export class AppComponent implements OnInit {
 
     this.filteredProperties.forEach(property => {
       const marker = L.marker([property.lat, property.lng])
-        .bindPopup(`<strong>${property.title}</strong><br>${property.address}<br><strong>$${property.price.toLocaleString()}</strong>`)
+        .bindPopup(`<strong>${property.title}</strong><br>${property.address}<br><strong>₹${property.price.toLocaleString('en-IN')}</strong>`)
         .addTo(this.map);
       (marker as any).propertyId = property.id;
 
