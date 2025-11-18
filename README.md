@@ -1,59 +1,194 @@
-# RealEstate
+🏠 Real_Estate — Angular Real Estate Listings Demo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+A modern, single-page Angular application for displaying real estate properties with live location mapping. Users can search, filter, and explore properties from a curated in-memory dataset — all visualized using a Leaflet map with interactive markers.
+This project demonstrates frontend UI, data handling, and third-party library integration in Angular 20.
 
-## Development server
+📑 Table of Contents
 
-To start a local development server, run:
+Overview
 
-```bash
-ng serve
-```
+Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Tech Stack & Dependencies
 
-## Code scaffolding
+Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Quick Start
 
-```bash
-ng generate component component-name
-```
+Available npm Scripts
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Data Model
 
-```bash
-ng generate --help
-```
+How the App Works
 
-## Building
+Project Structure
 
-To build the project run:
+Development Notes
 
-```bash
-ng build
-```
+Testing
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Contributing
 
-## Running unit tests
+License & Contact
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+🧾 Overview
 
-```bash
-ng test
-```
+This project is a demo of a real estate landing page built using Angular 20 with standalone components. It uses a local in-memory dataset, rendered in a dynamic UI with list-based viewing and Leaflet map markers.
 
-## Running end-to-end tests
+🗺️ The dataset contains example properties in Jalandhar, Punjab (India) and is provided by PropertyService.
 
-For end-to-end (e2e) testing, run:
+The app is fully responsive and formatted to Indian locale (en-IN) for currency and number formatting.
 
-```bash
-ng e2e
-```
+✨ Features
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+🔍 Search and filter properties by title, type (house/villa/apartment), or address
 
-## Additional Resources
+🏘️ Property cards with essential details (bedrooms, bathrooms, etc.)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📍 Leaflet map integration with live markers and popups
+
+📌 Clicking on a property or marker syncs the selection on map and list
+
+🇮🇳 Locale-aware formatting for currency (₹) and numbers
+
+🤏 Designed for frontend prototyping and learning with Angular
+
+🧰 Tech Stack & Dependencies
+
+Frontend: Angular 20
+
+UI: Angular Bindings + CSS
+
+Mapping: Leaflet (leaflet + @types/leaflet)
+
+Locale Support: registerLocaleData (for en-IN)
+
+Testing: Karma + Jasmine (default Angular setup)
+
+🛠 Prerequisites
+
+Node.js (LTS recommended, tested on Node 18+)
+
+npm or another package manager
+
+Angular CLI (optional): npm install -g @angular/cli
+
+🚀 Quick Start
+
+Clone the repository:
+
+git clone <repo-url>
+cd Real_Estate
+
+
+Install dependencies:
+
+npm install
+
+
+Run the development server:
+
+npm start
+
+
+Open your browser at http://localhost:4200
+.
+The app will reload automatically with any file changes.
+
+📜 Available npm Scripts
+Command	Description
+npm start	Run the development server (ng serve)
+npm run build	Build the project for production
+npm run watch	Build continuously in watch mode
+npm test	Run unit tests with Karma + Jasmine
+🧬 Data Model
+
+The data model is defined in src/app/models/property.model.ts:
+
+export interface Property {
+  id: number;
+  title: string;
+  address: string;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: number;
+  type: 'house' | 'villa' | 'apartment';
+  lat: number;
+  lng: number;
+}
+
+
+The dataset is currently hard-coded inside PropertyService.
+Add, remove, or modify sample listings in src/app/services/property.service.ts.
+
+🧠 How the App Works
+
+The main logic lives in AppComponent (standalone)
+
+On initialization, the component:
+
+Fetches property data via PropertyService
+
+Sets up filteredProperties and default map view
+
+Filtering works via:
+
+applyFilters() which applies search + type filter
+
+Syncs filtered results with markers on the map
+
+Searching is two-way bound with [(ngModel)]
+
+Leaflet map is initialized in initMap() with tiles from OpenStreetMap
+
+Markers are refreshed every time filters are applied
+
+📁 Project Structure (Key Files)
+src/
+ ├── app/
+ │    ├── app.component.ts     # Main Component with logic and map code
+ │    ├── app.component.html   # Template with property list and search
+ │    ├── app.component.css    # Component styles
+ │    ├── models/property.model.ts  # Data interface
+ │    └── services/property.service.ts  # Mock data service
+ ├── main.ts                   # Angular bootstrap entry
+ ├── index.html                # Root HTML
+ └── styles.css                # Global styles
+
+📝 Development Notes
+
+Leaflet CSS must be included from node_modules/leaflet/dist/leaflet.css
+(configured under styles in angular.json)
+
+Marker icons are loaded via CDN (configured in app.component.ts)
+
+You can replace the mock service with a backend API later
+
+Built using standalone components (no NgModules)
+
+🧪 Testing
+
+Run unit tests with:
+
+npm test
+
+
+Tests are configured using Jasmine + Karma (default Angular setup).
+
+🤝 Contributing
+
+Feel free to fork and contribute. Suggested workflow:
+
+git checkout -b feat/<feature-name>
+# Make your changes
+git commit -m "feat: add <something>"
+git push origin feat/<feature-name>
+# Then create a pull request
+
+📜 License & Contact
+
+This project does not include a license.
+To make it open-source, consider adding a LICENSE (e.g., MIT).
+
+For questions or suggestions, raise an issue or get in touch via GitHub.

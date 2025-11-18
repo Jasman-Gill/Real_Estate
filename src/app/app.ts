@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
   map!: L.Map;
   markers: L.Marker[] = [];
 
-  constructor(private propertyService: PropertyService) {}
+  constructor(private propertyService: PropertyService) { }
 
   ngOnInit() {
     this.properties = this.propertyService.getProperties();
