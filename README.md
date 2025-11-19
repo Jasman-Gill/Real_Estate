@@ -3,33 +3,6 @@
 A modern, single-page Angular application for displaying real estate properties with live location mapping. Users can search, filter, and explore properties from a curated in-memory dataset — all visualized using a Leaflet map with interactive markers.
 This project demonstrates frontend UI, data handling, and third-party library integration in Angular 20.
 
-📑 Table of Contents
-
-Overview
-
-Features
-
-Tech Stack & Dependencies
-
-Prerequisites
-
-Quick Start
-
-Available npm Scripts
-
-Data Model
-
-How the App Works
-
-Project Structure
-
-Development Notes
-
-Testing
-
-Contributing
-
-License & Contact
 
 🧾 Overview
 
