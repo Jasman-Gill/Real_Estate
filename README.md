@@ -79,20 +79,21 @@ npm install -g @angular/cli
 🚀 Quick Start
 
 Clone the repository:
-
+```bash
 git clone <repo-url>
 cd Real_Estate
+```
 
 
 Install dependencies:
-
+```bash
 npm install
-
+```
 
 Run the development server:
-
+```bash
 npm start
-
+```
 
 Open your browser at http://localhost:4200
 .
@@ -107,7 +108,7 @@ npm test	Run unit tests with Karma + Jasmine
 🧬 Data Model
 
 The data model is defined in src/app/models/property.model.ts:
-
+```bash
 export interface Property {
   id: number;
   title: string;
@@ -120,6 +121,7 @@ export interface Property {
   lat: number;
   lng: number;
 }
+```
 
 
 The dataset is currently hard-coded inside PropertyService.
@@ -146,7 +148,7 @@ Searching is two-way bound with [(ngModel)]
 Leaflet map is initialized in initMap() with tiles from OpenStreetMap
 
 Markers are refreshed every time filters are applied
-
+```bash
 📁 Project Structure (Key Files)
 src/
  ├── app/
@@ -158,6 +160,7 @@ src/
  ├── main.ts                   # Angular bootstrap entry
  ├── index.html                # Root HTML
  └── styles.css                # Global styles
+```
 
 📝 Development Notes
 
@@ -173,21 +176,22 @@ Built using standalone components (no NgModules)
 🧪 Testing
 
 Run unit tests with:
-
+```bash
 npm test
-
+```
 
 Tests are configured using Jasmine + Karma (default Angular setup).
 
 🤝 Contributing
 
 Feel free to fork and contribute. Suggested workflow:
-
+```bash
 git checkout -b feat/<feature-name>
 # Make your changes
 git commit -m "feat: add <something>"
 git push origin feat/<feature-name>
 # Then create a pull request
+```
 
 📜 License & Contact
 
