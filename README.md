@@ -4,7 +4,7 @@ A modern, single-page Angular application for displaying real estate properties 
 This project demonstrates frontend UI, data handling, and third-party library integration in Angular 20.
 
 
-🧾 Overview
+**🧾 Overview**
 
 This project is a demo of a real estate landing page built using Angular 20 with standalone components. It uses a local in-memory dataset, rendered in a dynamic UI with list-based viewing and Leaflet map markers.
 
@@ -12,7 +12,8 @@ This project is a demo of a real estate landing page built using Angular 20 with
 
 The app is fully responsive and formatted to Indian locale (en-IN) for currency and number formatting.
 
-✨ Features
+
+**✨ Features**
 
 🔍 Search and filter properties by title, type (house/villa/apartment), or address
 
@@ -26,7 +27,8 @@ The app is fully responsive and formatted to Indian locale (en-IN) for currency 
 
 🤏 Designed for frontend prototyping and learning with Angular
 
-🧰 Tech Stack & Dependencies
+
+**🧰 Tech Stack & Dependencies**
 
 Frontend: Angular 20
 
@@ -38,7 +40,8 @@ Locale Support: registerLocaleData (for en-IN)
 
 Testing: Karma + Jasmine (default Angular setup)
 
-🛠 Prerequisites
+
+**🛠 Prerequisites**
 
 Node.js (LTS recommended, tested on Node 18+)
 
@@ -49,7 +52,8 @@ Angular CLI (optional):
 npm install -g @angular/cli
 ```
 
-🚀 Quick Start
+
+**🚀 Quick Start**
 
 Clone the repository:
 ```bash
@@ -72,7 +76,9 @@ Open your browser at http://localhost:4200
 .
 The app will reload automatically with any file changes.
 
-📜 Available npm Scripts
+
+**📜 Available npm Scripts**
+
 Command	Description
 npm start	Run the development server (ng serve)
 npm run build	Build the project for production
@@ -100,7 +106,8 @@ export interface Property {
 The dataset is currently hard-coded inside PropertyService.
 Add, remove, or modify sample listings in src/app/services/property.service.ts.
 
-🧠 How the App Works
+
+**🧠 How the App Works**
 
 The main logic lives in AppComponent (standalone)
 
@@ -135,7 +142,8 @@ src/
  └── styles.css                # Global styles
 ```
 
-📝 Development Notes
+
+**📝 Development Notes**
 
 Leaflet CSS must be included from node_modules/leaflet/dist/leaflet.css
 (configured under styles in angular.json)
@@ -146,7 +154,8 @@ You can replace the mock service with a backend API later
 
 Built using standalone components (no NgModules)
 
-🧪 Testing
+
+**🧪 Testing**
 
 Run unit tests with:
 ```bash
@@ -155,7 +164,8 @@ npm test
 
 Tests are configured using Jasmine + Karma (default Angular setup).
 
-🤝 Contributing
+
+**🤝 Contributing**
 
 Feel free to fork and contribute. Suggested workflow:
 ```bash
@@ -166,7 +176,8 @@ git push origin feat/<feature-name>
 # Then create a pull request
 ```
 
-📜 License & Contact
+
+**📜 License & Contact**
 
 This project does not include a license.
 To make it open-source, consider adding a LICENSE (e.g., MIT).
