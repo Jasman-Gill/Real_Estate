@@ -71,7 +71,10 @@ Node.js (LTS recommended, tested on Node 18+)
 
 npm or another package manager
 
-Angular CLI (optional): npm install -g @angular/cli
+Angular CLI (optional): 
+```bash
+npm install -g @angular/cli
+```
 
 🚀 Quick Start
 
